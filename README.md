@@ -1,5 +1,3 @@
-aim is to solve 2 questions daily, and a total of 200+ questions in next 4 months.
-
-goal to achieve:
-1. 30 questions to be completed before 31 dec 2023.
-2. 
+here i will push the following
+1. all upsolved questions from codechef and codeforces contests
+2. leetcode problems
