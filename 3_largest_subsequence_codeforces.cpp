@@ -43,6 +43,7 @@ void code() {
 			}
 		}
 	}
+
 	// cout << "lex is:" << lex << endl;
 	// what if the lex is already sorted
 	int f = 1;
