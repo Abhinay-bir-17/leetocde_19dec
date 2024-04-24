@@ -37,5 +37,17 @@ vector<int> twoRepeated (int ar[], int n) {
 		}
 	}
 	return ab;
+}
 
+// -ve indexing method
+vector<int> twoRepeated (int ar[], int n) {
+	// Your code here
+	vector<int>ans;
+	for (int i = 0; i < (n + 2); i++) {
+		if (ar[abs(ar[i])] > 0 ) {
+			ar[abs(ar[i])] = -1 * ar[abs(ar[i])];
+		} else {
+			ans.push_back(abs(ar[i]));
+		}
+	} return ans;
 }
