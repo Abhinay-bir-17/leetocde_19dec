@@ -22,3 +22,10 @@ vector<int> singleNumber (vector<int>&ar) {
 	return ans;
 
 }
+
+
+vector<int> FindExitPoint(int n, int m, vector<vector<int>>& ar) {
+	// focus abhinay bir you can do it.
+
+
+}
