@@ -1,3 +1,52 @@
+// recursion works: 20th may 24
+class Solution {
+public:
+	int code(int lv, int ind, vector<int>&ar, int d, int n) {
+		if (d == 1) {
+
+			for (int i = ind; i < n; i++) {
+				lv = max(lv, ar[i]);
+			} return lv;
+		}
+		int a = INT_MAX, b = INT_MAX;
+		if ( ind <= (n - d)) {
+			a = code( max(lv, ar[ind]), ind + 1, ar, d, n);
+		}
+		b = lv + code(ar[ind], ind + 1, ar, d - 1, n);
+		return min(a, b);
+	}
+	int minDifficulty(vector<int>& ar, int d) {
+		int n = ar.size();
+		if (n < d)return -1;
+		return code(ar[0], 1, ar, d, n);
+	}
+};
+// rec + memo of 20th may 2024
+class Solution {
+public:
+	int code(int lv, int ind, vector<int>&ar, int d, int n, vector<vector<int>>&dp) {
+		if (d == 1) {
+
+			for (int i = ind; i < n; i++) {
+				lv = max(lv, ar[i]);
+			} return lv;
+		}
+		if (dp[ind + 1][d] != -1)return dp[ind + 1][d];
+		int a = INT_MAX, b = INT_MAX;
+		if ( ind <= (n - d)) {
+			a = code( max(lv, ar[ind]), ind + 1, ar, d, n, dp);
+		}
+		b = lv + code(ar[ind], ind + 1, ar, d - 1, n, dp);
+		return dp[ind + 1][d] = min(a, b);
+	}
+	int minDifficulty(vector<int>& ar, int d) {
+		int n = ar.size();
+		if (n < d)return -1;
+		vector<vector<int>>dp(n + 1, vector<int>(d + 1, -1));
+		return code(ar[0], 1, ar, d, n, dp);
+	}
+};
+
 // rec
 class Solution {
 public:
