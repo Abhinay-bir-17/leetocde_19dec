@@ -1,3 +1,4 @@
+//  tc is O(nlogn)
 class Solution {
 public:
     int code(vector<int>ar, int n, int ind) {
@@ -28,3 +29,5 @@ public:
         sort(ar.begin() + ind + 1, ar.end());
     }
 };
+//t.c is O(n) : instead of using sort, u can reverse the el from ind+1 to n-1 !!!
+
